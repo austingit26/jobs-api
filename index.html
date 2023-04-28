@@ -14,12 +14,13 @@
   </head>
   <body>
     <div class="container text-center">
-      <form>
+      <form class="form">
         <div class="form-floating mb-3">
           <input
             type="text"
             class="form-control"
             id="name"
+            name="name"
             placeholder="Juan Dela Cruz"
           />
           <label for="floatingInput">Name</label>
@@ -29,6 +30,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="email@example.com"
           />
           <label for="floatingInput">Email address</label>
@@ -38,6 +40,7 @@
             type="password"
             class="form-control"
             id="password"
+            name="password"
             placeholder="Password"
           />
           <label for="floatingPassword">Password</label>
@@ -49,12 +52,10 @@
 
   <script>
     const form = document.querySelector("form");
-
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const formData = new FormData(form);
-
       const response = await fetch(
         "https://drab-pink-salmon-cape.cyclic.app/api/v1/auth/register",
         {

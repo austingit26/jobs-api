@@ -8,7 +8,7 @@ const register = async (req, res) => {
   res
     .status(StatusCodes.CREATED)
     .json({ user: { name: user.name }, token })
-    .headers(("Access-Control-Allow-Origin", "*"));
+    .set("Access-Control-Allow-Origin", "*");
 };
 
 const login = async (req, res) => {
@@ -34,7 +34,7 @@ const login = async (req, res) => {
   res
     .status(StatusCodes.OK)
     .json({ user: { name: user.name }, token })
-    .headers(("Access-Control-Allow-Origin", "*"));
+    .set("Access-Control-Allow-Origin", "*");
 };
 
 module.exports = { register, login };
