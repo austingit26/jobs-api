@@ -56,7 +56,7 @@
       event.preventDefault();
 
       const formData = new FormData(form);
-      
+        console.log(formData);
       const response = await fetch(
         "https://sangria-viper-ring.cyclic.app/api/v1/auth/register",
         {
